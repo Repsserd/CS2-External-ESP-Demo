@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.20)
+project(NexusGameHub LANGUAGES CXX)
+if(NOT WIN32)
+  message(FATAL_ERROR "This starter project currently targets Windows.")
+endif()
+add_executable(NexusGameHub WIN32 main.cpp)
+target_compile_features(NexusGameHub PRIVATE cxx_std_17)
+target_link_libraries(NexusGameHub PRIVATE user32 gdi32)
